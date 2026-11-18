@@ -1,0 +1,35 @@
+.stock-available{color:#23764e!important}
+.stock-empty{color:#97372e!important}
+.status-low{background:#fff1dc;color:#8a5518}
+.print-actions{margin-top:10px}
+.print-button{background:#edf2ed;color:#19251f}
+.print-button:hover{background:#dfe9e0}
+.print-heading{display:none}
+
+@media(max-width:560px){
+  .product-row{align-items:flex-start}
+  .quantity{flex-direction:column;align-items:flex-end}
+  .quantity input{min-height:42px}
+  .print-actions,.print-button{width:100%}
+}
+
+@media print{
+  @page{margin:12mm}
+  body.printing-order{background:#fff;color:#111;font-size:11pt}
+  body.printing-order .topbar,
+  body.printing-order footer,
+  body.printing-order main.wrap>.hero,
+  body.printing-order main.wrap>.alert,
+  body.printing-order .layout>.panel,
+  body.printing-order .orders-column>.section-heading,
+  body.printing-order .order-card:not(.print-selected),
+  body.printing-order .order-actions,
+  body.printing-order .print-actions{display:none!important}
+  body.printing-order main.wrap{width:100%;margin:0;padding:0}
+  body.printing-order .layout,
+  body.printing-order .orders-column{display:block;width:100%}
+  body.printing-order .order-card.print-selected{display:block;border:0;border-radius:0;box-shadow:none;padding:0;margin:0}
+  body.printing-order .print-heading{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #999;padding-bottom:10px;margin-bottom:12px}
+  body.printing-order .order-item{font-size:11pt}
+  body.printing-order .observation{break-inside:avoid}
+}
